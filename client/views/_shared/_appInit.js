@@ -1,4 +1,5 @@
-Template.defaultLayout.rendered = function() {
+appInit = function() {
+    console.log('layout rendered');
     var App = function() {
         // Helper variables - set in uiInit()
         var $lHtml, $lBody, $lPage, $lSidebar, $lSidebarScroll, $lSideOverlay, $lSideOverlayScroll, $lHeader, $lMain, $lFooter;

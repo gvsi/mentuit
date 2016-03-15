@@ -20,3 +20,4 @@ less
 twbs:bootstrap
 kadira:flow-router
 kadira:blaze-layout
+themeteorchef:jquery-validation
