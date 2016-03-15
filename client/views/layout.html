@@ -1,0 +1,15 @@
+<template name="defaultLayout">
+    <div id="page-container" class="sidebar-l sidebar-mini sidebar-o side-scroll header-navbar-fixed">
+        {{>sideOverlay}}
+        {{>sidebar}}
+        {{>header}}
+
+        <!-- Main Container -->
+        <main id="main-container">
+            {{> Template.dynamic template=main}}
+        </main>
+        <!-- END Main Container -->
+    </div>
+
+
+</template>
