@@ -19,19 +19,18 @@ Template.login.rendered = function() {
                     jQuery(e).closest('.help-block').remove();
                 },
                 rules: {
-                    'login-username': {
+                    'login-email': {
                         required: true,
-                        minlength: 3
+                        email: true
                     },
                     'login-password': {
                         required: true,
-                        minlength: 5
+                        minlength: 6
                     }
                 },
                 messages: {
-                    'login-username': {
-                        required: 'Please enter a username',
-                        minlength: 'Your username must consist of at least 3 characters'
+                    'login-email': {
+                        required: 'Please enter a valid email address',
                     },
                     'login-password': {
                         required: 'Please provide a password',
@@ -52,3 +51,29 @@ Template.login.rendered = function() {
     // Initialize when page loads
     jQuery(function(){ BasePagesLogin.init(); });
 }
+
+Template.login.events({
+    'submit form': function(event) {
+        event.preventDefault();
+        var emailVar = $('#login-email').val();
+        var passwordVar = $('#login-password').val();
+
+        Meteor.loginWithPassword(emailVar, passwordVar, function(e){
+            if (e) {
+                switch (e.reason) {
+                    case "Incorrect password":
+                        $('.js-validation-login').validate().showErrors({"login-password": "Invalid password"});
+                        break;
+                    case "User not found":
+                        $('.js-validation-login').validate().showErrors({"login-email": "We can't recognize this email"});
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                FlowRouter.go("/");
+            }
+        });
+
+    }
+});
