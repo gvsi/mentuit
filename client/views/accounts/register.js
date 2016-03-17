@@ -18,6 +18,12 @@ Template.register.rendered = function() {
                     jQuery(e).closest('.help-block').remove();
                 },
                 rules: {
+                    'register-name': {
+                        required: true
+                    },
+                    'register-surname': {
+                        required: true
+                    },
                     'register-email': {
                         required: true,
                         email: true
@@ -35,6 +41,12 @@ Template.register.rendered = function() {
                     }
                 },
                 messages: {
+                    'register-name': {
+                        required: 'What\'s your name?',
+                    },
+                    'register-surname': {
+                        required: 'What\'s your surname?',
+                    },
                     'register-email': 'Please enter a valid email address',
                     'register-password': {
                         required: 'Please provide a password',
@@ -67,10 +79,12 @@ Template.register.events({
         event.preventDefault();
         var emailVar = $('#register-email').val();
         var passwordVar = $('#register-password').val();
-
+        var nameVar = $('#register-name').val();
+        var surnameVar = $('#register-surname').val();
         Accounts.createUser({
             email: emailVar,
-            password: passwordVar
+            password: passwordVar,
+            profile: {name: nameVar, surname: surnameVar}
         }, function(e) {
             if (e) {
                 console.log(e);
@@ -82,6 +96,11 @@ Template.register.events({
                         break;
                 }
             } else {
+                var userId = Meteor.userId();
+                console.log(userId);
+                Meteor.call('sendVerificationEmail', userId);
+                //Accounts.sendVerificationEmail(userId);
+                //console.log(id);
                 FlowRouter.go("/");
             }
         });
