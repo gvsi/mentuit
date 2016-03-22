@@ -1,6 +1,4 @@
-appInit = function() {
-    console.log('layout rendered');
-    var App = function() {
+App = function() {
         // Helper variables - set in uiInit()
         var $lHtml, $lBody, $lPage, $lSidebar, $lSidebarScroll, $lSideOverlay, $lSideOverlayScroll, $lHeader, $lMain, $lFooter;
 
@@ -1328,13 +1326,9 @@ appInit = function() {
         };
     }();
 
-// Create an alias for App (you can use OneUI in your pages instead of App if you like)
-    var OneUI = App;
-
-// Initialize app when page loads
-    jQuery(function(){
-        if (typeof angular == 'undefined') {
-            App.init();
-        }
-    });
-};
+//// Initialize app when page loads
+//    jQuery(function(){
+//        if (typeof angular == 'undefined') {
+//            App.init();
+//        }
+//    });

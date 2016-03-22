@@ -1,4 +1,5 @@
 Template.profile.rendered = function () {
-    appInit();
+    App.init();
 
+    App.initHelpers('appear');
 };
