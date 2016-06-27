@@ -5,3 +5,9 @@ Meteor.startup = function() {
         forbidClientAccountCreation: false
     });
 };
+
+if (Meteor.isServer) {
+    AdminConfig = {
+        adminEmails: ['me@giovannialcantara.com'],
+    };
+}
