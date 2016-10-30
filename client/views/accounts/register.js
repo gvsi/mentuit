@@ -85,7 +85,7 @@ Template.register.events({
         Accounts.createUser({
             email: emailVar,
             password: passwordVar,
-            profile: {name: nameVar, surname: surnameVar}
+            profile: {firstName: nameVar, lastName: surnameVar, emailAddress: emailVar}
         }, function(e) {
             if (e) {
                 console.log(e);
