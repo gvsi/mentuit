@@ -1,0 +1,14 @@
+{
+  "name": "mentuit",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "canvas": "^1.6.1",
+    "jquery-countto": "^1.2.0",
+    "linkedin-public-profile": "^4.0.1",
+    "meteor-node-stubs": "^0.2.3"
+  }
+}
