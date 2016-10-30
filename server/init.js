@@ -1,13 +1,22 @@
+import linkedInProfile from 'linkedin-public-profile';
+
 Meteor.startup = function() {
-    console.log('hello');
     Accounts.config({
         sendVerificationEmail: true,
-        forbidClientAccountCreation: false
+        forbidClientAccountCreation: false,
+        requestPermissions: {
+            linkedin: ['r_basicprofile']
+        },
     });
-};
 
-if (Meteor.isServer) {
     AdminConfig = {
         adminEmails: ['me@giovannialcantara.com'],
     };
-}
+
+    const url = 'https://www.linkedin.com/in/giovannialcantara';
+
+// standard usage
+    linkedInProfile(url).then(profile => {  // chain your logic
+        console.log(profile);
+    });
+};
