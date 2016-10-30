@@ -1,5 +1,6 @@
 Template.register.rendered = function() {
-    appInit();
+    App.init();
+
     var BasePagesRegister = function() {
         // Init Register Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
         var initValidationRegister = function(){

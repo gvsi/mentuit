@@ -1,5 +1,5 @@
 Template.login.rendered = function() {
-    appInit();
+    App.init();
     console.log('login rendered');
     var BasePagesLogin = function() {
         // Init Login Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
