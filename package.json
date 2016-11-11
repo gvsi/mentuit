@@ -1,15 +1,17 @@
 {
   "name": "mentuit",
+  "version": "1.0.0",
   "private": true,
+  "dependencies": {
+    "linkedin-public-profile": "^4.0.1",
+    "meteor-node-stubs": "^0.2.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "start": "meteor run"
   },
-  "dependencies": {
-    "bcrypt": "^0.8.7",
-    "canvas": "^1.6.1",
-    "easy-pie-chart": "^2.1.7",
-    "jquery-countto": "^1.2.0",
-    "linkedin-public-profile": "^4.0.1",
-    "meteor-node-stubs": "^0.2.3"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvsi/mentuit.git"
   }
 }
