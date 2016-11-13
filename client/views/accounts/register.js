@@ -105,5 +105,20 @@ Template.register.events({
                 FlowRouter.go("/");
             }
         });
+    },
+    'click #linkedinBtn': function(event) {
+        Meteor.loginWithLinkedin({}, function(err) {
+            if (err) {
+                if (err.errorType != "Accounts.LoginCancelledError")
+                    Bert.alert( "There was an error signing up with LinkedIn", 'danger' );
+            } else {
+                FlowRouter.go("/");
+            }
+        });
+    },
+    'click #showSignupFormBtn': function(event) {
+        $('#signupForm').show();
+        $('#signup-container').removeClass("pulldown");
+        $('#linkedinBtn').hide();
     }
 });

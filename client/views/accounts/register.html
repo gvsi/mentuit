@@ -1,19 +1,23 @@
 <template name="register">
     <!-- Register Content -->
-    <div class="bg-white" style="height: 100%">
+    <div id="signup-container" class="bg-white pulldown" style="height: 100%">
         <div class="content content-boxed overflow-hidden">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
                     <div class="push-30-t push-20 animated fadeIn">
                         <!-- Register Title -->
                         <div class="text-center">
-                            <img src="/img/logo_small.png" height="50">
-                            <h1 class="h3 push-10-t">Create Account</h1>
+                            <a href="/">
+                                <img src="/img/logo_small.png" height="50">
+                            </a>
                         </div>
                         <!-- END Register Title -->
 
+                        <button id="linkedinBtn" class="btn btn-block btn-primary push-30-t" type="button" hei><i class="fa fa-linkedin pull-left"></i> Sign up with LinkedIn</button>
+
+                        <div class="text-center push-20-t">or <br> <button id="showSignupFormBtn" class="btn btn-xs btn-default push-20-t" type="button">Create an account</button></div>
                         <!-- Register Form -->
-                        <form class="js-validation-register form-horizontal push-50-t push-50">
+                        <form id="signupForm" class="js-validation-register form-horizontal push-50-t push-50" style="display:none">
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <div class="form-material form-material-success">
