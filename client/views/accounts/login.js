@@ -74,6 +74,15 @@ Template.login.events({
                 FlowRouter.go("/");
             }
         });
-
+    },
+    'click #linkedinBtn': function(event) {
+        Meteor.loginWithLinkedin({}, function(err) {
+            if (err) {
+                if (err.errorType != "Accounts.LoginCancelledError")
+                    Bert.alert( "There was an error signing up with LinkedIn", 'danger' );
+            } else {
+                FlowRouter.go("/");
+            }
+        });
     }
 });
