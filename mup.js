@@ -19,7 +19,7 @@ module.exports = {
       serverOnly: true,
     },
     env: {
-      ROOT_URL: 'http://54.153.119.66',
+      ROOT_URL: 'http://demo.mentuit.com',
       MONGO_URL: 'mongodb://localhost/meteor'
     },
 
